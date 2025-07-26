@@ -19,8 +19,8 @@ create table repair_requests(
     description VARCHAR(4000),
     PRIMARY KEY (request_id),
     FOREIGN KEY (customer_id) REFERENCES customer_accounts(customer_id)
-		On DELETE CASCADE
-        ON UPDATE CASCADE
+			ON DELETE CASCADE
+      ON UPDATE CASCADE
 );
 
 create table repair_jobs(
@@ -34,8 +34,8 @@ create table repair_jobs(
     request_id INT NOT NULL,
     PRIMARY KEY (job_id),
     FOREIGN KEY (request_id) REFERENCES repair_requests(request_id)
-		On DELETE CASCADE
-        ON UPDATE CASCADE
+			ON DELETE CASCADE
+      ON UPDATE CASCADE
 );
 
 create table employees(
@@ -70,14 +70,14 @@ create table repair_tasks(
     employee_id INT,
     PRIMARY KEY (task_id),
     FOREIGN KEY (job_id) REFERENCES repair_jobs(job_id)
-		On DELETE CASCADE
-        ON UPDATE CASCADE,
+			ON DELETE CASCADE
+      ON UPDATE CASCADE,
     FOREIGN KEY (component_id) REFERENCES inventory_components(component_id)
-		On DELETE CASCADE
-        ON UPDATE CASCADE,
+			ON DELETE CASCADE
+      ON UPDATE CASCADE,
     FOREIGN KEY (employee_id) REFERENCES employees(employee_id)
-		On DELETE CASCADE
-        ON UPDATE CASCADE
+			ON DELETE CASCADE
+      ON UPDATE CASCADE
 );
 
 create table invoices(
@@ -88,6 +88,6 @@ create table invoices(
     job_id INT NOT NULL,
     PRIMARY KEY (invoice_id),
     FOREIGN KEY (job_id) REFERENCES repair_jobs(job_id)
-		On DELETE CASCADE
-        ON UPDATE CASCADE
+			ON DELETE CASCADE
+      ON UPDATE CASCADE
 );
