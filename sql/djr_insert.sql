@@ -13,7 +13,17 @@ INSERT INTO employees(f_name,l_name,SIN,phone_number,email,role,pay_rate) VALUES
     ("Mia","Patel","456789012","5556460033","mia.patel@placeholder.co","Technician","23"),
     ("Alexander","Kim","567890123","5557771212","alex.kim@testaddress.com","Customer Service Representative","20")
 ;
-    
+
+UPDATE employees
+SET total_hours = "6.5"
+WHERE employee_id = 1
+;
+
+UPDATE employees
+SET total_hours = "5"
+WHERE employee_id = 4
+;
+
 INSERT INTO inventory_components(name,price,in_stock,category) VALUES
 	  ("Intel Core i7 CPU","320.00","3","Processor"),
     ("AMD Ryzen 5 CPU","200.00","7","Processor"),
@@ -51,6 +61,31 @@ INSERT INTO repair_jobs(status,start_date,estimated_completion_date,completion_d
     ("Completed","2025-07-12","2025-07-13","2025-07-13","Smartphone screen protector installation",NULL,3),
     ("In Progress","2025-07-20","2025-07-27",NULL,"Laptop battery replacement",NULL,4),
     ("In Progress","2025-07-24","2025-07-31",NULL,"Desktop PC CPU upgrade, return the original to owner",NULL,5)
+;
+
+UPDATE repair_jobs
+SET work_hours = "3.5"
+WHERE job_id = 1
+;
+
+UPDATE repair_jobs
+SET work_hours = "3"
+WHERE job_id = 2
+;
+
+UPDATE repair_jobs
+SET work_hours = "1"
+WHERE job_id = 3
+;
+
+UPDATE repair_jobs
+SET work_hours = "3"
+WHERE job_id = 4
+;
+
+UPDATE repair_jobs
+SET work_hours = "1"
+WHERE job_id = 5
 ;
 
 INSERT INTO repair_tasks(work_hours,start_date,completion_date,job_id,component_id,employee_id) VALUES
