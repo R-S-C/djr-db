@@ -4,6 +4,10 @@ INSERT INTO customer_accounts(f_name,l_name,phone_number,email) VALUES
     ("Sophia","Nguyen","5552468102","sophia.nguyen@sample.org"),
     ("Liam","Rodriguez","5553691470","liam.rodriguez@demo.co"),
     ("Ava","Bennet","5557890123","ava.bennett@testmail.com");
+
+UPDATE customer_accounts
+SET amount_owing = "33.00"
+WHERE customer_id = 3;
     
 INSERT INTO employees(f_name,l_name,SIN,phone_number,email,role,pay_rate) VALUES
 	  ("Noah","Mitchell","123456789","5553141592","noah.mitchell@fakemail.com","Technician","23"),
